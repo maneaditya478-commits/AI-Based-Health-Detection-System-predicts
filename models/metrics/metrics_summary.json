@@ -1,0 +1,22 @@
+{
+  "dataset_rows": 293248,
+  "label_col": "deterioration_next_12h",
+  "metrics": {
+    "xgboost": {
+      "accuracy": 0.9693085213200348,
+      "precision": 0.8009237875288684,
+      "recall": 0.5527574115396876,
+      "f1_score": 0.6540927951716333,
+      "roc_auc": 0.9560899442032667,
+      "threshold": 0.5
+    },
+    "random_forest": {
+      "accuracy": 0.9676852533636789,
+      "precision": 0.8183738120380147,
+      "recall": 0.4941026458399745,
+      "f1_score": 0.6161796859471278,
+      "roc_auc": 0.9377360384541735,
+      "threshold": 0.5
+    }
+  }
+}

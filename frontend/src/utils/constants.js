@@ -1,0 +1,23 @@
+export const FEATURE_RANGES = {
+    heart_rate: { min: 40.0, max: 180.0, normal_low: 60, normal_high: 100, normal: "60–100", default: 75.0, unit: "bpm", label: "Heart Rate" },
+    respiratory_rate: { min: 8.0, max: 40.0, normal_low: 12, normal_high: 20, normal: "12–20", default: 16.0, unit: "rpm", label: "Resp Rate" },
+    spo2_pct: { min: 70.0, max: 100.0, normal_low: 95, normal_high: 100, normal: "95–100", default: 98.0, unit: "%", label: "SpO2" },
+    temperature_f: { min: 93.0, max: 108.0, normal_low: 97.0, normal_high: 99.5, normal: "97.0–99.5", default: 98.6, unit: "°F", label: "Temp (°F)" },
+    systolic_bp: { min: 70.0, max: 200.0, normal_low: 90, normal_high: 120, normal: "90–120", default: 120.0, unit: "mmHg", label: "Systolic BP" },
+    diastolic_bp: { min: 40.0, max: 120.0, normal_low: 60, normal_high: 80, normal: "60–80", default: 80.0, unit: "mmHg", label: "Diastolic BP" },
+    wbc_count: { min: 1.0, max: 30.0, normal_low: 4.5, normal_high: 11.0, normal: "4.5–11.0", default: 7.5, unit: "k/µL", label: "WBC Count" },
+    lactate: { min: 0.2, max: 10.0, normal_low: 0.5, normal_high: 1.0, normal: "0.5–1.0", default: 1.0, unit: "mmol/L", label: "Lactate" },
+    creatinine: { min: 0.3, max: 10.0, normal_low: 0.7, normal_high: 1.3, normal: "0.7–1.3", default: 0.9, unit: "mg/dL", label: "Creatinine" },
+    crp_level: { min: 0.0, max: 300.0, normal_low: 0.0, normal_high: 10.0, normal: "0–10", default: 3.0, unit: "mg/L", label: "CRP Level" },
+    platelets: { min: 10.0, max: 1000.0, normal_low: 150.0, normal_high: 450.0, normal: "150–450", default: 250.0, unit: "k/µL", label: "Platelets" },
+    calcium_level: { min: 5.0, max: 15.0, normal_low: 8.5, normal_high: 10.2, normal: "8.5–10.2", default: 9.5, unit: "mg/dL", label: "Calcium" },
+    iron_level: { min: 10.0, max: 300.0, normal_low: 60.0, normal_high: 170.0, normal: "60–170", default: 100.0, unit: "µg/dL", label: "Iron" },
+    cholesterol: { min: 100.0, max: 400.0, normal_low: 0.0, normal_high: 200.0, normal: "< 200", default: 150.0, unit: "mg/dL", label: "Cholesterol" },
+    cortisol: { min: 1.0, max: 50.0, normal_low: 5.0, normal_high: 25.0, normal: "5–25", default: 15.0, unit: "µg/dL", label: "Cortisol" },
+    esr: { min: 0.0, max: 100.0, normal_low: 0.0, normal_high: 20.0, normal: "0–20", default: 10.0, unit: "mm/hr", label: "ESR" },
+    t3: { min: 50.0, max: 300.0, normal_low: 80.0, normal_high: 200.0, normal: "80–200", default: 120.0, unit: "ng/dL", label: "Free T3" },
+    t4: { min: 2.0, max: 20.0, normal_low: 5.0, normal_high: 12.0, normal: "5–12", default: 8.0, unit: "µg/dL", label: "Free T4" },
+    tsh: { min: 0.1, max: 10.0, normal_low: 0.4, normal_high: 4.0, normal: "0.4–4.0", default: 2.0, unit: "mIU/L", label: "TSH Level" },
+    weight_kg: { min: 30.0, max: 250.0, normal_low: 50.0, normal_high: 100.0, normal: "50–100", default: 70.0, unit: "kg", label: "Weight" },
+    urine_routine: { min: 0.0, max: 2.0, normal_low: 0, normal_high: 0, normal: "0 (Normal)", default: 0.0, unit: "", label: "Urine Routine" }
+};

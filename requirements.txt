@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+plotly
+joblib
+matplotlib
+seaborn
+shap
+pymongo
+dnspython

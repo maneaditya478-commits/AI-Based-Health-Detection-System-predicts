@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+*.joblib
+*.pkl
+*.h5
+*.csv
+
+# Node.js
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.eslintcache
+
+# Database/Storage
+db_data/*.json
+alert_history.json
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Project Specific
+backend_error.txt
+error.txt
+error2.txt
+full_error.txt
+query
+tmp/
