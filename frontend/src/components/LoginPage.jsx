@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Activity, User, Lock, UserPlus, LogIn, Shield, Stethoscope, Heart } from 'lucide-react';
+import { API_BASE_URL } from '../utils/api';
 
 const LoginPage = ({ onLogin }) => {
     const [isSignup, setIsSignup] = useState(false);
@@ -22,7 +23,7 @@ const LoginPage = ({ onLogin }) => {
                 ? { username, password, role, full_name: fullName }
                 : { username, password };
 
-            const API_BASE = 'http://localhost:8000';
+            const API_BASE = API_BASE_URL;
             const res = await fetch(`${API_BASE}${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -48,7 +49,7 @@ const LoginPage = ({ onLogin }) => {
         setLoading(true);
         setError('');
         try {
-            const API_BASE = 'http://localhost:8000';
+            const API_BASE = API_BASE_URL;
             const res = await fetch(`${API_BASE}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

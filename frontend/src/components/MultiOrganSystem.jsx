@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, UploadCloud, HeartPulse, BrainCircuit, Activity, CheckCircle, AlertTriangle, ShieldAlert, Volume2, Square, Plus } from 'lucide-react';
+import { API_BASE_URL } from '../utils/api';
 
 const MultiOrganSystem = ({ user }) => {
   const { t, i18n } = useTranslation();
@@ -113,7 +114,7 @@ const MultiOrganSystem = ({ user }) => {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8000/multi-organ-risk', {
+      const response = await fetch(`${API_BASE_URL}/multi-organ-risk`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

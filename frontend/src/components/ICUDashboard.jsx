@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, AlertTriangle, ShieldCheck, AlertCircle, Search, Activity, Heart, Brain, RefreshCw, ArrowUpDown, ChevronRight, MapPin, Bed } from 'lucide-react';
+import { API_BASE_URL } from '../utils/api';
 
 const ICUDashboard = ({ onSelectPatient }) => {
     const [patients, setPatients] = useState([]);
@@ -11,7 +12,7 @@ const ICUDashboard = ({ onSelectPatient }) => {
 
     const fetchPatients = async () => {
         try {
-            const res = await fetch('http://localhost:8000/patients');
+            const res = await fetch(`${API_BASE_URL}/patients`);
             const data = await res.json();
             setPatients(data);
         } catch (err) {

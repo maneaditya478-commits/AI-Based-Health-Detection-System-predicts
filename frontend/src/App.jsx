@@ -6,7 +6,7 @@ import { ChartsPanel } from './components/ChartsPanel';
 import { VitalsControl } from './components/VitalsControl';
 import { PatientProfile } from './components/PatientProfile';
 import { MedicalAssistant } from './components/MedicalAssistant';
-import { predictRisk, fetchAlerts } from './utils/api';
+import { predictRisk, fetchAlerts, API_BASE_URL } from './utils/api';
 import { simulatePatientSeries } from './utils/simulate';
 import { FEATURE_RANGES } from './utils/constants';
 import { AlertCircle, Bell } from 'lucide-react';
@@ -281,7 +281,7 @@ function App() {
     if ((text.includes('show') || text.includes('find')) && (text.includes('vitals') || text.includes('patient'))) {
         showToast('Searching for patient...', 'info');
         try {
-            const res = await fetch('http://localhost:8000/patients');
+            const res = await fetch(`${API_BASE_URL}/patients`);
             const data = await res.json();
             const match = data.find(p => text.includes(p.name.toLowerCase().split(' ')[0]) || text.includes(p.patient_id.toLowerCase()));
             if (match) {
