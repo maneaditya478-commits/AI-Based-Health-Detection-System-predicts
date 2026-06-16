@@ -13,6 +13,7 @@ WORKDIR /app
 # Install system dependencies for dependencies like XGBoost or shap if needed
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install

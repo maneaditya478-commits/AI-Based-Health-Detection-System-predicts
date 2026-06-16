@@ -30,7 +30,12 @@ logger = logging.getLogger("db")
 # Initialize Client
 try:
     logger.info(f"Connecting to MongoDB at {MONGO_URI}...")
-    client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+    try:
+        import certifi
+        ca = certifi.where()
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000, tlsCAFile=ca)
+    except ImportError:
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
     db = client[DATABASE_NAME]
     # Check connection
     client.admin.command('ping')

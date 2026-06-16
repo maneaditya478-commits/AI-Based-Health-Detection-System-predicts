@@ -13,3 +13,4 @@ seaborn
 shap
 pymongo
 dnspython
+certifi
