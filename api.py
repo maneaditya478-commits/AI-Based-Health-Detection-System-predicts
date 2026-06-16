@@ -32,6 +32,7 @@ import joblib
 import numpy as np
 from fastapi import FastAPI, HTTPException, Depends, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from utils import FeatureConfig, featurize_history, probability_to_percent, risk_level_from_probability
@@ -204,7 +205,12 @@ class PatientCreateRequest(BaseModel):
 # ─── Root & Health ───────────────────────────────────────────────
 
 @core_router.get("/")
-def read_root() -> Dict[str, Any]:
+def read_root() -> Any:
+    import os
+    from fastapi.responses import FileResponse
+    index_path = os.path.join("frontend", "dist", "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
     return {"message": "AI-Based Hospital-Grade Early Warning System — Backend Running"}
 
 
@@ -536,6 +542,11 @@ def on_startup():
 app.include_router(core_router)
 app.include_router(auth_router)
 app.include_router(patient_router)
+
+# Mount frontend static files
+# Ensure 'frontend/dist' exists after 'npm run build'
+if os.path.exists(os.path.join("frontend", "dist")):
+    app.mount("/", StaticFiles(directory=os.path.join("frontend", "dist"), html=True), name="frontend")
 
 # Log registered routes
 for route in app.routes:
